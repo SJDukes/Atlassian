@@ -4,19 +4,17 @@
 
 module.exports = GetURLS;
 
-var webdriver = require('selenium-webdriver');
-var driver = new webdriver.Builder().
-    withCapabilities(webdriver.Capabilities.chrome()).
-    build();
+var Helper = require('../../v2/Helper.js')
+
 
 function GetURLS() {
-    var self = this;
-    //this.driver = driver;
-    // this.webdriver = webdriver;
+
+
 }
 //Function to get to main JIRA page
 GetURLS.OpenJira = function () {
-    var self = this;
+    var driver = Helper.GetDriver();
+
     driver.get('https://jira.atlassian.com/secure/Dashboard.jspa');
     driver.manage().window().maximize();
 }

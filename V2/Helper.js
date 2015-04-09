@@ -5,20 +5,19 @@
 
 module.exports = Helper;
 
-function Helper(driver, webdriver) {
-   // var self = this;
-   // self.driver = driver;
-  //  self.webdriver = webdriver;
+function Helper() {
 
-    //self.userSetupPage = new UserSetupPage(self.driver, self.webdriver);
+    var webdriver = require('selenium-webdriver');
+    var driver = new webdriver.Builder().
+        withCapabilities(webdriver.Capabilities.chrome()).
+        build();
 
-}
+    GetDriver = function() {
+        return driver;
+    };
+    GetWebDriver = function() {
+        return webdriver;
+    }}
 
-    Helper.chromeOptions =  function () {
-        var webdriver = require('selenium-webdriver');
-        var driver = new webdriver.Builder().
-            withCapabilities(webdriver.Capabilities.chrome()).
-            build();
 
-    }
 

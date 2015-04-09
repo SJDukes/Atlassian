@@ -4,10 +4,9 @@
 
 module.exports = CreateIssuePage;
 
-var webdriver = require('selenium-webdriver');
-var driver = new webdriver.Builder().
-    withCapabilities(webdriver.Capabilities.chrome()).
-    build();
+var Helper = require('../../v2/Helper.js')
+var driver = Helper.GetDriver();
+var webdriver = Helper.GetWebDriver();
 
 function CreateIssuePage() {
   //  var self = this;
